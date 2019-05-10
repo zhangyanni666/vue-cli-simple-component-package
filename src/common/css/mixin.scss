@@ -1,0 +1,72 @@
+@import './var';
+
+@mixin clearfix{
+  display: inline-block;
+  &:after{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html &{
+    height: 1px;
+  }
+}
+
+/*BEM*/
+
+@mixin block($block){
+  $B: $namespace + '-'+$block !global;
+  .#{$B}{
+    @content;
+  }
+}
+
+@mixin e($element){
+  $E:$element !global;
+  $selector:&;
+  $currentSelector:"";
+  @each $unit in $element{
+    $currentSelector :#{$currentSelector+"."+$B +$element-separator + $unit+","};
+  }
+
+  @if hitAllSpecialNestRule($selector){
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+
+@mixin model($model){
+  $selector:&;
+  $currentSelector:"";
+  @each $unit in $model{
+    $currentSelector:#{$selector+$modifier-separator+$unit}
+  }
+
+  @at-root {
+    #{$currentSelector}{
+      @content;
+    }
+  }
+}
+
+@mixin when($state){
+  @at-root{
+    &.#{$state-prefix+$state}{
+      @content;
+    }
+  }
+}
