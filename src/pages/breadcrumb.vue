@@ -2,11 +2,11 @@
     <div>
       <p>breadcrumb</p>
       <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: item.url }" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: item.url }" :key="item.id" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
       </el-breadcrumb>
       <div class="marginTop10">
         <el-breadcrumb>
-          <el-breadcrumb-item :to="{ path: item.url }" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: item.url }" :key="item.id" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
     </div>
