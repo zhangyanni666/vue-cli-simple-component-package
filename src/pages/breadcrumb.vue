@@ -4,6 +4,11 @@
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: item.url }" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
       </el-breadcrumb>
+      <div class="marginTop10">
+        <el-breadcrumb>
+          <el-breadcrumb-item :to="{ path: item.url }" v-for="item in breadCrumb">{{item.title}}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
     </div>
 </template>
 
@@ -32,5 +37,8 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .marginTop10{
+    margin-top: 10px;
+  }
 </style>

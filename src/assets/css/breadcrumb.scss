@@ -34,14 +34,14 @@
     }
   }
   &:last-child{
-    .el-breadcrumb__inner,
-    .el-breadcrumb__inner a{
-      &,&:hover{
-        font-weight: normal;
-        color: $--color-text-regular;
-        cursor: text;
-      }
-    }
+    //.el-breadcrumb__inner,
+    //.el-breadcrumb__inner a{
+    //  &,&:hover{
+    //    font-weight: normal;
+    //    color: $--color-text-regular;
+    //    cursor: text;
+    //  }
+    //}
 
     .el-breadcrumb__separator{
       display: none;

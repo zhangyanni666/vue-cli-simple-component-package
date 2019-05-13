@@ -33,8 +33,6 @@
       link.setAttribute("role","link");
       link.addEventListener("click",()=>{
         const{to,$router} = this;
-        console.log(this);
-        console.log('to',to);
         if(!to||!$router) return ;
         this.replace ? $router.replace(to) : $router.push(to);
       })
