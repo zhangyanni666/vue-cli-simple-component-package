@@ -4,6 +4,8 @@ import cmpt from '@/pages/parentCmpt'
 import showEditor from '@/pages/showEditor'
 import buttonCmpt from '@/pages/button';
 import breadCrumbCmpt from '@/pages/breadcrumb'
+import dialogRight from '@/pages/dialogright'
+import popupCmpt from '@/pages/popup'
 Vue.use(Router)
 
 export default new Router({
@@ -28,5 +30,15 @@ export default new Router({
       name:'showEditor',
       component:showEditor
     },
+    {
+      path:'/dialogRight',
+      name:'dialogRight',
+      component:dialogRight
+    },
+    {
+      path:'/popupCmpt',
+      name:"popupCmpt",
+      component:popupCmpt
+    }
   ]
 })

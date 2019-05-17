@@ -25126,7 +25126,7 @@ UE.ui = baidu.editor.ui = {};
 })();
 
 
-// ui/mask.js
+// ui/popover.js
 ///import core
 ///import uicore
 (function (){
@@ -25141,7 +25141,7 @@ UE.ui = baidu.editor.ui = {};
     };
     Mask.prototype = {
         getHtmlTpl: function (){
-            return '<div id="##" class="edui-mask %%" onclick="return $$._onClick(event, this);" onmousedown="return $$._onMouseDown(event, this);"></div>';
+            return '<div id="##" class="edui-popover %%" onclick="return $$._onClick(event, this);" onmousedown="return $$._onMouseDown(event, this);"></div>';
         },
         postRender: function (){
             var me = this;
@@ -25182,7 +25182,7 @@ UE.ui = baidu.editor.ui = {};
 })();
 
 
-// ui/popup.js
+// ui/popover.js
 ///import core
 ///import uicore
 (function () {
@@ -25227,11 +25227,11 @@ UE.ui = baidu.editor.ui = {};
             allPopups.push( this );
         },
         getHtmlTpl: function (){
-            return '<div id="##" class="edui-popup %%" onmousedown="return false;">' +
-                ' <div id="##_body" class="edui-popup-body">' +
+            return '<div id="##" class="edui-popover %%" onmousedown="return false;">' +
+                ' <div id="##_body" class="edui-popover-body">' +
                 ' <iframe style="position:absolute;z-index:-1;left:0;top:0;background-color: transparent;" frameborder="0" width="100%" height="100%" src="about:blank"></iframe>' +
                 ' <div class="edui-shadow"></div>' +
-                ' <div id="##_content" class="edui-popup-content">' +
+                ' <div id="##_content" class="edui-popover-content">' +
                 this.getContentHtmlTpl() +
                 '  </div>' +
                 ' </div>' +
@@ -25882,7 +25882,7 @@ UE.ui = baidu.editor.ui = {};
 ///import core
 ///import uicore
 ///import ui/colorpicker.js
-///import ui/popup.js
+///import ui/popover.js
 ///import ui/splitbutton.js
 (function (){
     var utils = baidu.editor.utils,
@@ -25944,7 +25944,7 @@ UE.ui = baidu.editor.ui = {};
 // ui/tablebutton.js
 ///import core
 ///import uicore
-///import ui/popup.js
+///import ui/popover.js
 ///import ui/tablepicker.js
 ///import ui/splitbutton.js
 (function (){
@@ -26053,7 +26053,7 @@ UE.ui = baidu.editor.ui = {};
 // ui/autotypesetbutton.js
 ///import core
 ///import uicore
-///import ui/popup.js
+///import ui/popover.js
 ///import ui/autotypesetpicker.js
 ///import ui/splitbutton.js
 (function (){
@@ -26414,7 +26414,7 @@ UE.ui = baidu.editor.ui = {};
 // ui/menu.js
 ///import core
 ///import uicore
-///import ui\popup.js
+///import ui\popover.js
 ///import ui\stateful.js
 (function () {
     var utils = baidu.editor.utils,
@@ -26792,7 +26792,7 @@ UE.ui = baidu.editor.ui = {};
 // ui/dialog.js
 ///import core
 ///import uicore
-///import ui/mask.js
+///import ui/popover.js
 ///import ui/button.js
 (function (){
     var utils = baidu.editor.utils,
@@ -27402,7 +27402,7 @@ UE.ui = baidu.editor.ui = {};
             isSubMenuShow = false;
             var layerEle = uiUtils.getFixedLayer ();
             var list = domUtils.getElementsByTagName (layerEle , "div" , function (node) {
-                return domUtils.hasClass (node , "edui-shortcutsubmenu edui-popup")
+                return domUtils.hasClass (node , "edui-shortcutsubmenu edui-popover")
             });
 
             for (var i = 0, node ; node = list[i++] ;) {
@@ -27505,7 +27505,7 @@ UE.ui = baidu.editor.ui = {};
     function hideAllMenu (e) {
         var tgt = e.target || e.srcElement,
             cur = domUtils.findParent (tgt , function (node) {
-                return domUtils.hasClass (node , "edui-shortcutmenu") || domUtils.hasClass (node , "edui-popup");
+                return domUtils.hasClass (node , "edui-shortcutmenu") || domUtils.hasClass (node , "edui-popover");
             } , true);
 
         if (!cur) {

@@ -1230,7 +1230,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
     };
 
     /**
-     * Opens up a centered popup window.
+     * Opens up a centered popover window.
      * @param {String} url		URL to open in the window.
      * @param {String} name		Popup name.
      * @param {int} width		Popup width.

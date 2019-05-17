@@ -1,0 +1,14 @@
+@import '../../common/css/config';
+@import '../../common/css/mixin';
+@import '../../common/css/utils';
+@import '../../common/css/var';
+@include block(popup){
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  &.is-dark{
+    background-color: rgba(0,0,0,0);
+  }
+}
